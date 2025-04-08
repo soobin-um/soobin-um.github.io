@@ -4,112 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Soobin Um</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
   <style>
+    :root {
+      --bg: #f4f4f9;
+      --text: #1a1a1a;
+      --accent: #3f51b5;
+      --card: #ffffff;
+    }
+
     body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0 auto;
-      padding: 2rem;
-      max-width: 800px;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
     }
-    h1, h2, h3 {
-      color: #222;
+
+    .container {
+      max-width: 860px;
+      margin: auto;
+      padding: 3rem 1rem;
     }
-    img.profile {
-      width: 160px;
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0 0.2rem 0;
+    }
+
+    header .sub {
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .profile-pic {
+      width: 180px;
       border-radius: 50%;
+      margin-top: 1rem;
+    }
+
+    .icons {
+      margin-top: 0.8rem;
+    }
+
+    .icons a {
+      margin: 0 0.5rem;
+      font-size: 1.4rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .cv-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.4rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    section {
+      background-color: var(--card);
+      padding: 1.8rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.4rem;
       margin-bottom: 1rem;
     }
-    section {
-      margin-top: 2.5rem;
-    }
+
     ul {
       padding-left: 1.2rem;
     }
+
     li {
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
     }
-    strong {
-      color: #000;
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    em {
-      font-style: italic;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <img src="photo.jpg" alt="Soobin Um" class="profile-pic">
+      <h1>Soobin Um</h1>
+      <div class="sub">PhD Candidate @ KAIST AI | Generative Modeling</div>
+      <div class="icons">
+        <a href="mailto:sum@kaist.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/soobin-um" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user=JBGNjA0AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/soobin-um" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <a class="cv-button" href="sum_CV.pdf" target="_blank">Download CV</a>
+    </header>
 
-  <header style="text-align: center;">
-    <img src="photo.jpg" alt="Soobin Um" class="profile" />
-    <h1>Soobin Um</h1>
-    <p>Ph.D. Candidate, KAIST AI</p>
-    <p>Email: sum@kaist.ac.kr</p>
-  </header>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am a Ph.D. candidate at <a href="https://gsai.kaist.ac.kr/">the Kim Jaechul Graduate School of AI, KAIST</a>, advised by <a href="https://bispl.weebly.com/professor.html">Prof. Jong Chul Ye</a>.
+        My research focuses on generative modeling, with a special interest in robust and inclusive AI.
+        I also explore the intersection of generative models and physics, particularly in photonic structures.
+        I previously worked as a senior researcher at <a href="https://www.add.re.kr">Agency for Defense Development (ADD)</a> for 7.5 years,
+        specializing in wireless communication systems and defense applications.
+      </p>
+    </section>
 
-  <section id="bio">
-    <h2>Short Bio</h2>
-    <p>
-      I am a Ph.D. candidate at the Graduate School of AI, KAIST, advised by Prof. Jong Chul Ye.
-      My research focuses on generative modeling, with a special interest in fair and inclusive AI,
-      particularly for underrepresented classes in vision datasets.
-      I previously worked as a senior researcher at the Agency for Defense Development (ADD) for 7.5 years,
-      specializing in wireless communication systems and defense applications.
-    </p>
-    <p>
-      <strong>Education:</strong><br>
-      - Ph.D. in AI, KAIST (2021–present)<br>
-      - M.S. in EE, KAIST<br>
-      - B.S. in Media Communication Engineering, Hanyang University (Summa Cum Laude)
-    </p>
-    <p>
-      <strong>Research Interests:</strong><br>
-      Generative Models · Fairness in AI · Diffusion Models · Minority Representation · Scientific Design via AI
-    </p>
-  </section>
+    <section>
+      <h2>News</h2>
+      <ul>
+        <li><strong>2025.04</strong> – <em>MinorityPrompt</em> is selected as <b>oral presentation (top 0.74%)</b> at <em>CVPR 2025</em>.</li>
+        <li><strong>2025.02</strong> – Our paper, <em>MinorityPrompt</em>, is accepted to <em>CVPR 2025</em>.</li>
+      </ul>
+    </section>
 
-  <section id="publications">
-    <h2>Publications</h2>
+    <section>
+      <h2>Publications</h2>
+        <h3>Conference Papers</h3>
+        <ul>
+          <li>
+            <em>Minority-Focused Text-to-Image Generation via Prompt Optimization</em><br>
+            <strong>Soobin Um</strong>, Jong Chul Ye<br>
+            <em>CVPR 2025</em> <strong>(Oral presentation, top 0.74%)</strong>
+          </li>
+          <li>
+            <em>Physics-guided Optimization of Photonic Structures using Denoising Diffusion Probabilistic Models</em><br>
+            Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung<br>
+            <em>NeurIPS 2024 Workshop (ML4PS)</em>
+          </li>
+          <li>
+            <em>Self-Guided Generation of Minority Samples Using Diffusion Models</em><br>
+            <strong>Soobin Um</strong>, Jong Chul Ye<br>
+            <em>ECCV 2024</em>
+          </li>
+          <li>
+            <em>Don't Play Favorites: Minority Guidance for Diffusion Models</em><br>
+            <strong>Soobin Um</strong>, Suhyeon Lee, Jong Chul Ye<br>
+            <em>ICLR 2024</em>
+          </li>
+          <li>
+            <em>A Fair Generative Model Using LeCam Divergence</em><br>
+            <strong>Soobin Um</strong>, Changho Suh<br>
+            <em>AAAI 2023</em> <strong>(Oral presentation)</strong>
+          </li>
+        </ul>
 
-    <h3>Conference Papers</h3>
-    <ul>
-      <li>
-        <em>Minority-Focused Text-to-Image Generation via Prompt Optimization</em><br>
-        <strong>Soobin Um</strong>, Jong Chul Ye<br>
-        <em>CVPR 2025</em> <strong>(Oral presentation, top 0.74%)</strong>
-      </li>
-      <li>
-        <em>Physics-guided Optimization of Photonic Structures using Denoising Diffusion Probabilistic Models</em><br>
-        Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung<br>
-        <em>NeurIPS 2024 Workshop (ML4PS)</em>
-      </li>
-      <li>
-        <em>Self-Guided Generation of Minority Samples Using Diffusion Models</em><br>
-        <strong>Soobin Um</strong>, Jong Chul Ye<br>
-        <em>ECCV 2024</em>
-      </li>
-      <li>
-        <em>Don't Play Favorites: Minority Guidance for Diffusion Models</em><br>
-        <strong>Soobin Um</strong>, Suhyeon Lee, Jong Chul Ye<br>
-        <em>ICLR 2024</em>
-      </li>
-      <li>
-        <em>A Fair Generative Model Using LeCam Divergence</em><br>
-        <strong>Soobin Um</strong>, Changho Suh<br>
-        <em>AAAI 2023</em> <strong>(Oral presentation)</strong>
-      </li>
-    </ul>
-
-    <h3>Preprints</h3>
-    <ul>
-      <li>
-        <em>Boost-and-Skip: A Simple Guidance-Free Diffusion for Minority Generation</em><br>
-        <strong>Soobin Um*</strong>, Beomsu Kim*, Jong Chul Ye<br>
-        <em>Submitted to ICML 2025</em>
-      </li>
-    </ul>
-  </section>
-
+        <h3>Preprints</h3>
+        <ul>
+          <li>
+            <em>Boost-and-Skip: A Simple Guidance-Free Diffusion for Minority Generation</em><br>
+            <strong>Soobin Um*</strong>, Beomsu Kim*, Jong Chul Ye<br>
+            <em>Submitted to ICML 2025</em>
+          </li>
+        </ul>
+    </section>
+  </div>
 </body>
 </html>

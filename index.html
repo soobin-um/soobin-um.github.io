@@ -15,7 +15,7 @@
     body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
     .wrap{max-width:1280px;margin:auto;padding:40px 20px}
-    .layout{display:grid;grid-template-columns:400px minmax(0,1fr);gap:32px}
+    .layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:32px}
 
     /* left */
     aside.profile{position:sticky;top:24px;align-self:start}
@@ -28,8 +28,8 @@
     .contact{font-size:0.98rem;color:var(--muted)}
     .contact code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.95rem}
 
-    /* right */
-    main.main{max-height:calc(100vh - 48px);overflow-y:auto;padding-right:6px}
+    /* right: disable inner scroll globally for cleaner UX */
+    main.main{max-height:none; overflow:visible; padding-right:0}
     section.block{margin:40px 0}
     section.block h2{margin:0 0 14px;font-size:1.25rem}
     .news ul{list-style:none;padding:0;margin:0}
@@ -42,7 +42,7 @@
     .pubs li:first-child{border-top:0}
     footer{margin:48px 0 8px;color:var(--muted);font-size:.95rem}
 
-    /* ===== Mobile/Tablet Fix: both columns scroll together, no sticky ===== */
+    /* Mobile/Tablet: one column, sticky off (kept for safety) */
     @media (max-width: 900px){
       .layout{grid-template-columns:1fr}
       aside.profile{position:static; top:auto}
@@ -65,7 +65,7 @@
         </div>
         <hr class="hairline" />
         <div class="contact">
-          <div>📧 <code>soobin.um at kookmin.ac.kr</code></div>
+          <div>📧 soobin.um at kookmin.ac.kr</div>
           <div>📍 202, KMU Law Building, Seoul 02707</div>
           <div>📞 +82-2-910-4808</div>
         </div>
@@ -150,15 +150,12 @@
           </ul>
         </section>
 
-        <!-- <footer>
-          <div>© <span id="year"></span> Soobin Um</div>
-        </footer> -->
       </main>
     </div>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }
   </script>
 </body>
 </html>

@@ -2,221 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soobin Um</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soobin Um — Assistant Professor, Kookmin University</title>
+  <meta name="description" content="Soobin Um — Assistant Professor of AI at Kookmin University. Generative modeling, trustworthy & inclusive AI, and AI for scientific discovery." />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:title" content="Soobin Um — Assistant Professor, Kookmin University" />
+  <meta property="og:description" content="Generative modeling, trustworthy & inclusive AI, and AI for scientific discovery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="photo.jpg" />
+  <meta property="og:url" content="https://soobin-um.github.io/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
   <style>
-    :root {
-      --bg: #f4f4f9;
-      --text: #1a1a1a;
-      --accent: #3f51b5;
-      --card: #ffffff;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.8;
-    }
-
-    .container {
-      max-width: 860px;
-      margin: auto;
-      padding: 3rem 1rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0 0.2rem 0;
-    }
-
-    header .sub {
-      font-family: 'Fira Code', monospace;
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .profile-pic {
-      width: 180px;
-      border-radius: 50%;
-      margin-top: 1rem;
-    }
-
-    .icons {
-      margin-top: 0.8rem;
-    }
-
-    .icons a {
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .cv-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.4rem 1rem;
-      background-color: var(--accent);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    section {
-      background-color: var(--card);
-      padding: 1.8rem;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-    }
-
-    section h2 {
-      font-size: 1.5rem;
-      color: var(--accent);
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.4rem;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.8rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 1.2rem;
-      }
-    }
-  </style>
+  /* ===== Minimal, robust two-column layout ===== */
+  :root{
+    --bg:#ffffff; --text:#0f172a; --muted:#475569; --hair:#e5e7eb; --accent:#0ea5e9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1280px;margin:auto;padding:40px 20px}
+  .layout{display:grid;grid-template-columns:400px minmax(0,1fr);gap:32px}
+  /* left */
+  aside.profile{position:sticky;top:24px;align-self:start}
+  .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:1px solid var(--hair)}
+  aside.profile h1{margin:12px 0 6px;font-size:32px}
+  .subtitle{color:var(--muted);font-weight:500}
+  .actions{margin-top:12px;display:flex;gap:10px}
+  .actions a{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted)}
+  .hairline{border:0;border-top:1px solid var(--hair);margin:14px 0}
+  .contact{font-size:0.98rem;color:var(--muted)}
+  .contact code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.95rem}
+  /* right */
+  main.main{max-height:calc(100vh - 48px);overflow-y:auto;padding-right:6px}
+  section.block{margin:40px 0}
+  section.block h2{margin:0 0 14px;font-size:1.25rem}
+  .news ul{list-style:none;padding:0;margin:0}
+  .news li{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-top:1px dashed var(--hair)}
+  .news li:first-child{border-top:0}
+  .news time{color:var(--muted);font-variant-numeric:tabular-nums}
+  .pubs h3{margin:22px 0 8px;font-size:1.05rem;color:var(--muted)}
+  .pubs ul{list-style:none;padding:0;margin:0}
+  .pubs li{padding:14px 0;border-top:1px dashed var(--hair)}
+  .pubs li:first-child{border-top:0}
+  footer{margin:48px 0 8px;color:var(--muted);font-size:.95rem}
+  @media (max-width:720px){.layout{grid-template-columns:1fr} main.main{max-height:unset;overflow:visible}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="photo.jpg" alt="Soobin Um" class="profile-pic">
-      <h1>Soobin Um</h1>
-      <div class="sub">Assistant Professor @ Kookmin University | Generative Modeling</div>
-      <div class="icons">
-        <a href="mailto:soobin.um@kookmin.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/soobin-um" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://scholar.google.com/citations?user=JBGNjA0AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/soobin-um" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <a class="cv-button" href="sum_CV.pdf" target="_blank">Download CV</a>
-    </header>
+  <div class="wrap">
+    <div class="layout">
+      <aside class="profile" role="complementary">
+        <img src="photo.jpg" alt="Portrait of Soobin Um" class="avatar" />
+        <h1>Soobin Um</h1>
+        <div class="subtitle">Assistant Professor<br>Department of AI, Kookmin University</div>
+        <div class="actions simple-icons">
+          <a href="sum_CV.pdf" title="CV" aria-label="CV"><i class="fa-regular fa-file-lines"></i></a>
+          <a href="https://scholar.google.com/citations?user=JBGNjA0AAAAJ&hl=en" target="_blank" rel="noopener" title="Scholar" aria-label="Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+          <a href="https://github.com/soobin-um" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/soobin-um" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <hr class="hairline" />
+        <div class="contact">
+          <div>📧 <code>soobin.um at kookmin.ac.kr</code></div>
+          <div>📍 202, KMU Law Building, Seoul 02707</div>
+          <div>📞 +82-2-910-4808</div>
+        </div>
+      </aside>
 
-    <section>
-      <h2>About Me</h2>
+      <main class="main" role="main">
+        <section class="block about">
+          <h2>About Me</h2>
+          <p>
+            I am an Assistant Professor in the <a href="https://ai.kookmin.ac.kr">Department of Artificial Intelligence</a> at <a href="https://www.kookmin.ac.kr">Kookmin University</a>, where I have been serving since September 2025.
+            I received my Ph.D. in Artificial Intelligence from <a href="https://gsai.kaist.ac.kr/">the Kim Jaechul Graduate School of AI, KAIST</a> under the supervision of <a href="https://bispl.weebly.com/professor.html">Prof. Jong Chul Ye</a>.
+            Prior to my Ph.D., I worked as a senior researcher at the <a href="https://www.add.re.kr">Agency for Defense Development (ADD)</a> for 7.5 years, specializing in wireless communication systems and defense applications.
+          </p>
+          <p>
+            My research focuses on generative modeling, with a particular interest in developing trustworthy and responsible AI systems. I also explore the intersection of generative models and scientific discovery, aiming to advance scientific understanding and innovation through generative approaches.
+          </p>
+        </section>
 
-      <p>
-        I am an Assistant Professor in the <a href="https://ai.kookmin.ac.kr">Department of Artificial Intelligence</a> 
-        at <a href="https://www.kookmin.ac.kr">Kookmin University</a>, where I have been serving since September 2025. 
-        I received my Ph.D. in Artificial Intelligence from 
-        <a href="https://gsai.kaist.ac.kr/">the Kim Jaechul Graduate School of AI, KAIST</a> 
-        under the supervision of <a href="https://bispl.weebly.com/professor.html">Prof. Jong Chul Ye</a>. 
-        Prior to my Ph.D., I worked as a senior researcher at the 
-        <a href="https://www.add.re.kr">Agency for Defense Development (ADD)</a> 
-        for 7.5 years, specializing in wireless communication systems and defense applications.
-      </p>
+        <section class="block news">
+          <h2>News</h2>
+          <ul>
+            <li><time>2025-09</time> <span>Our project, <em>DPAIL</em>, has been accepted to <em>NeurIPS 2025</em>.</span></li>
+            <li><time>2025-09</time> <span>Joined Kookmin University as an Assistant Professor in the Department of Artificial Intelligence (since Sep 1, 2025).</span></li>
+            <li><time>2025-08</time> <span>Graduated with a Ph.D. in Artificial Intelligence from KAIST (Aug 15, 2025).</span></li>
+            <li><time>2025-08</time> <span>Invited talk on <em>MinorityPrompt</em> at the KAIA Summer Conference.</span></li>
+            <li><time>2025-07</time> <span>Invited talk at the Visual AI Lab, Princeton University.</span></li>
+            <li><time>2025-07</time> <span>Joint invited talk at The McMahon Lab, Cornell University (with Dongjin Seo).</span></li>
+            <li><time>2025-05</time> <span><em>Boost-and-Skip</em> accepted to ICML 2025.</span></li>
+            <li><time>2025-04</time> <span><em>MinorityPrompt</em> selected as <strong>CVPR 2025 Oral (top 0.74%)</strong>.</span></li>
+            <li><time>2025-02</time> <span><em>MinorityPrompt</em> accepted to CVPR 2025.</span></li>
+          </ul>
+        </section>
 
-      <p>
-        My research focuses on generative modeling, with a particular interest in developing trustworthy and responsible AI systems. 
-        I also explore the intersection of generative models and scientific discovery, aiming to advance scientific understanding and innovation through generative approaches.
-      </p>
-    </section>
+        <section class="block pubs">
+          <h2>Publications</h2>
+          <h3>Conference Papers</h3>
+          <ul>
+            <li>
+              <div class="pub-title"><a href="https://neurips.cc/virtual/2025/poster/119072"><em>DPAIL: Training Diffusion Policy for Adversarial Imitation Learning without Policy Optimization</em></a></div>
+              <div class="pub-authors">Yunseon Choi, Minchan Jeong, <strong>Soobin Um</strong>, Kee-Eung Kim</div>
+              <div class="pub-venue"><em>NeurIPS 2025</em></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://arxiv.org/abs/2502.06516"><em>Boost-and-Skip: A Simple Guidance-Free Diffusion for Minority Generation</em></a></div>
+              <div class="pub-authors"><strong>Soobin Um*</strong>, Beomsu Kim*, Jong Chul Ye</div>
+              <div class="pub-venue"><em>ICML 2025</em></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://arxiv.org/abs/2410.07838"><em>Minority-Focused Text-to-Image Generation via Prompt Optimization</em></a></div>
+              <div class="pub-authors"><strong>Soobin Um</strong>, Jong Chul Ye</div>
+              <div class="pub-venue"><em>CVPR 2025</em> — <strong>Oral (top 0.74%)</strong></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_16.pdf"><em>Physics-guided Optimization of Photonic Structures using Denoising Diffusion Probabilistic Models</em></a></div>
+              <div class="pub-authors">Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung</div>
+              <div class="pub-venue"><em>NeurIPS 2024 Workshop (ML4PS)</em></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-73113-6_24"><em>Self-Guided Generation of Minority Samples Using Diffusion Models</em></a></div>
+              <div class="pub-authors"><strong>Soobin Um</strong>, Jong Chul Ye</div>
+              <div class="pub-venue"><em>ECCV 2024</em></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://openreview.net/forum?id=3NmO9lY4Jn"><em>Don't Play Favorites: Minority Guidance for Diffusion Models</em></a></div>
+              <div class="pub-authors"><strong>Soobin Um</strong>, Suhyeon Lee, Jong Chul Ye</div>
+              <div class="pub-venue"><em>ICLR 2024</em></div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/26196"><em>A Fair Generative Model Using LeCam Divergence</em></a></div>
+              <div class="pub-authors"><strong>Soobin Um</strong>, Changho Suh</div>
+              <div class="pub-venue"><em>AAAI 2023</em> — <strong>Oral</strong></div>
+            </li>
+          </ul>
 
+          <h3>Preprints</h3>
+          <ul>
+            <li>
+              <div class="pub-title"><a href="https://arxiv.org/abs/2504.17077"><em>Physics-guided and fabrication-aware inverse design of photonic devices using diffusion models</em></a></div>
+              <div class="pub-authors">Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung</div>
+              <div class="pub-venue"><em>Submitted to ACS Photonics</em></div>
+            </li>
+          </ul>
+        </section>
 
-    <section>
-      <h2>News</h2>
-      <ul>
-        <li><strong>2025.09</strong> – Our project, <em>DPAIL</em>, has been accepted to <em>NeurIPS 2025</em>.</li>
-        <li><strong>2025.09</strong> – Joined <a href="https://www.kookmin.ac.kr" target="_blank">Kookmin University</a> as an Assistant Professor in the Department of Artificial Intelligence starting September 1, 2025.</li>
-        <li><strong>2025.08</strong> – Graduated with a Ph.D. in Artificial Intelligence from KAIST on August 15, 2025.</li>
-        <li><strong>2025.08</strong> – Gave an invited talk on <em>MinorityPrompt</em> at the <a href="https://aiassociation.kr/" target="_blank">Korean AI Association – KAIA Summer Conference</a>.</li>
-        <li><strong>2025.08</strong> – Presented a poster on <em>MinorityPrompt</em> at <a href="https://kcvs.kr/?act=info.workshop&pseq=8" target="_blank">KCCV 2025</a>.</li>
-        <li><strong>2025.07</strong> – Gave an invited talk on <em>MinorityPrompt</em> and <em>Boost-and-Skip</em> at the <em><a href="https://visualai.princeton.edu/" target="_blank">Visual AI Lab, Princeton University</a></em>.</li>
-        <li><strong>2025.07</strong> – Delivered a joint invited talk on diffusion-based inverse design at <em><a href="https://mcmahon.aep.cornell.edu/index.html" target="_blank">The McMahon Lab, Cornell University</a></em> (with Dongjin Seo).</li>
-        <li><strong>2025.05</strong> – Our recent project, <em>Boost-and-Skip</em>, has been accepted to <em>ICML 2025</em>.</li>
-        <li><strong>2025.04</strong> – <em>MinorityPrompt</em> is selected as <b>oral presentation (top 0.74%)</b> at <em>CVPR 2025</em>.</li>
-        <li><strong>2025.02</strong> – Our paper, <em>MinorityPrompt</em>, is accepted to <em>CVPR 2025</em>.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Publications</h2>
-        <h3>Conference Papers</h3>
-        <ul>
-          <li>
-            <a href="https://neurips.cc/virtual/2025/poster/119072"><em>DPAIL: Training Diffusion Policy for Adversarial Imitation Learning without Policy Optimization</em></a><br>
-            Yunseon Choi, Minchan Jeong, <strong>Soobin Um</strong>, Kee-Eung Kim<br>
-            <em>NeurIPS 2025</em>
-          </li>
-          <li>
-            <a href="https://arxiv.org/abs/2502.06516"><em>Boost-and-Skip: A Simple Guidance-Free Diffusion for Minority Generation</em></a><br>
-            <strong>Soobin Um*</strong>, Beomsu Kim*, Jong Chul Ye<br>
-            <em>ICML 2025</em>
-          </li>
-          <li>
-            <a href="https://arxiv.org/abs/2410.07838"><em>Minority-Focused Text-to-Image Generation via Prompt Optimization</em></a><br>
-            <strong>Soobin Um</strong>, Jong Chul Ye<br>
-            <em>CVPR 2025</em> <strong>(Oral presentation, top 0.74%)</strong>
-          </li>
-          <li>
-            <a href="https://ml4physicalsciences.github.io/2024/files/NeurIPS_ML4PS_2024_16.pdf"><em>Physics-guided Optimization of Photonic Structures using Denoising Diffusion Probabilistic Models</em></a><br>
-            Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung<br>
-            <em>NeurIPS 2024 Workshop (ML4PS)</em>
-          </li>
-          <li>
-            <a href="https://link.springer.com/chapter/10.1007/978-3-031-73113-6_24"><em>Self-Guided Generation of Minority Samples Using Diffusion Models</em></a><br>
-            <strong>Soobin Um</strong>, Jong Chul Ye<br>
-            <em>ECCV 2024</em>
-          </li>
-          <li>
-            <a href="https://openreview.net/forum?id=3NmO9lY4Jn"><em>Don't Play Favorites: Minority Guidance for Diffusion Models</em></a><br>
-            <strong>Soobin Um</strong>, Suhyeon Lee, Jong Chul Ye<br>
-            <em>ICLR 2024</em>
-          </li>
-          <li>
-            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26196"><em>A Fair Generative Model Using LeCam Divergence</em></a><br>
-            <strong>Soobin Um</strong>, Changho Suh<br>
-            <em>AAAI 2023</em> <strong>(Oral presentation)</strong>
-          </li>
-        </ul>
-
-        <h3>Preprints</h3>
-        <ul>
-          <li>
-            <a href="https://arxiv.org/abs/2504.17077"><em>Physics-guided and fabrication-aware inverse design of photonic devices using diffusion models</em></a><br>
-            Dongjin Seo*, <strong>Soobin Um*</strong>, Sangbin Lee, Jong Chul Ye, Haejun Chung<br>
-            <em>Submitted to ACS Photonics</em>
-          </li>
-        </ul>
-    </section>
+        <!-- <footer>
+          <div>© <span id="year"></span> Soobin Um</div>
+        </footer> -->
+      </main>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
